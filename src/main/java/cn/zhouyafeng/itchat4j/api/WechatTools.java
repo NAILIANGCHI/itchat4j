@@ -22,7 +22,7 @@ import cn.zhouyafeng.itchat4j.utils.enums.URLEnum;
 
 /**
  * 微信小工具，如获好友列表等
- * 
+ *
  * @author https://github.com/yaphone
  * @date 创建时间：2017年5月4日 下午10:49:16
  * @version 1.0
@@ -35,7 +35,7 @@ public class WechatTools {
 
 	/**
 	 * 根据用户名发送文本消息
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年5月4日 下午10:43:14
 	 * @param msg
@@ -54,10 +54,10 @@ public class WechatTools {
 	 * "@1212d3356aea8285e5bbe7b91229936bc183780a8ffa469f2d638bf0d2e4fc63"，
 	 * 可通过UserName发送消息
 	 * </p>
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年5月4日 下午10:56:31
-	 * @param name
+	 * @param nickName
 	 * @return
 	 */
 	public static String getUserNameByNickName(String nickName) {
@@ -71,7 +71,7 @@ public class WechatTools {
 
 	/**
 	 * 返回好友昵称列表
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年5月4日 下午11:37:20
 	 * @return
@@ -86,7 +86,7 @@ public class WechatTools {
 
 	/**
 	 * 返回好友完整信息列表
-	 * 
+	 *
 	 * @date 2017年6月26日 下午9:45:39
 	 * @return
 	 */
@@ -96,7 +96,7 @@ public class WechatTools {
 
 	/**
 	 * 返回群列表
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年5月5日 下午9:55:21
 	 * @return
@@ -107,7 +107,7 @@ public class WechatTools {
 
 	/**
 	 * 获取群ID列表
-	 * 
+	 *
 	 * @date 2017年6月21日 下午11:42:56
 	 * @return
 	 */
@@ -117,7 +117,7 @@ public class WechatTools {
 
 	/**
 	 * 获取群NickName列表
-	 * 
+	 *
 	 * @date 2017年6月21日 下午11:43:38
 	 * @return
 	 */
@@ -127,7 +127,7 @@ public class WechatTools {
 
 	/**
 	 * 根据groupIdList返回群成员列表
-	 * 
+	 *
 	 * @date 2017年6月13日 下午11:12:31
 	 * @param groupId
 	 * @return
@@ -138,7 +138,7 @@ public class WechatTools {
 
 	/**
 	 * 退出微信
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年5月18日 下午11:56:54
 	 */
@@ -172,9 +172,9 @@ public class WechatTools {
 	}
 
 	/**
-	 * 
+	 *
 	 * 根据用户昵称设置备注名称
-	 * 
+	 *
 	 * @date 2017年5月27日 上午12:21:40
 	 * @param userName
 	 * @param remName
@@ -204,7 +204,7 @@ public class WechatTools {
 
 	/**
 	 * 获取微信在线状态
-	 * 
+	 *
 	 * @date 2017年6月16日 上午12:47:46
 	 * @return
 	 */

@@ -44,7 +44,7 @@ import cn.zhouyafeng.itchat4j.utils.tools.CommonTools;
 
 /**
  * 登陆服务实现类
- * 
+ *
  * @author https://github.com/yaphone
  * @date 创建时间：2017年5月13日 上午12:09:35
  * @version 1.0
@@ -77,7 +77,7 @@ public class LoginServiceImpl implements ILoginService {
 			// SleepUtils.sleep(time += 1000);
 			long millis = System.currentTimeMillis();
 			params.add(new BasicNameValuePair(LoginParaEnum.R.para(), String.valueOf(millis / 1579L)));
-			params.add(new BasicNameValuePair(LoginParaEnum._.para(), String.valueOf(millis)));
+			params.add(new BasicNameValuePair(LoginParaEnum.Time_.para(), String.valueOf(millis)));
 			HttpEntity entity = httpClient.doGet(URLEnum.LOGIN_URL.getUrl(), params, true, null);
 
 			try {
@@ -110,7 +110,7 @@ public class LoginServiceImpl implements ILoginService {
 				UUIDParaEnum.REDIRECT_URL.value()));
 		params.add(new BasicNameValuePair(UUIDParaEnum.FUN.para(), UUIDParaEnum.FUN.value()));
 		params.add(new BasicNameValuePair(UUIDParaEnum.LANG.para(), UUIDParaEnum.LANG.value()));
-		params.add(new BasicNameValuePair(UUIDParaEnum._.para(), String.valueOf(System.currentTimeMillis())));
+		params.add(new BasicNameValuePair(UUIDParaEnum.Time_.para(), String.valueOf(System.currentTimeMillis())));
 
 		HttpEntity entity = httpClient.doGet(URLEnum.UUID_URL.getUrl(), params, true, null);
 
@@ -524,7 +524,7 @@ public class LoginServiceImpl implements ILoginService {
 		Map<String, List<String>> possibleUrlMap = new HashMap<String, List<String>>();
 		possibleUrlMap.put("wx.qq.com", new ArrayList<String>() {
 			/**
-			 * 
+			 *
 			 */
 			private static final long serialVersionUID = 1L;
 
@@ -536,7 +536,7 @@ public class LoginServiceImpl implements ILoginService {
 
 		possibleUrlMap.put("wx2.qq.com", new ArrayList<String>() {
 			/**
-			 * 
+			 *
 			 */
 			private static final long serialVersionUID = 1L;
 
@@ -547,7 +547,7 @@ public class LoginServiceImpl implements ILoginService {
 		});
 		possibleUrlMap.put("wx8.qq.com", new ArrayList<String>() {
 			/**
-			 * 
+			 *
 			 */
 			private static final long serialVersionUID = 1L;
 
@@ -559,7 +559,7 @@ public class LoginServiceImpl implements ILoginService {
 
 		possibleUrlMap.put("web2.wechat.com", new ArrayList<String>() {
 			/**
-			 * 
+			 *
 			 */
 			private static final long serialVersionUID = 1L;
 
@@ -570,7 +570,7 @@ public class LoginServiceImpl implements ILoginService {
 		});
 		possibleUrlMap.put("wechat.com", new ArrayList<String>() {
 			/**
-			 * 
+			 *
 			 */
 			private static final long serialVersionUID = 1L;
 
@@ -584,7 +584,7 @@ public class LoginServiceImpl implements ILoginService {
 
 	/**
 	 * 同步消息 sync the messages
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年5月12日 上午12:24:55
 	 * @return
@@ -629,11 +629,11 @@ public class LoginServiceImpl implements ILoginService {
 
 	/**
 	 * 检查是否有新消息 check whether there's a message
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年4月16日 上午11:11:34
 	 * @return
-	 * 
+	 *
 	 */
 	private Map<String, String> syncCheck() {
 		Map<String, String> resultMap = new HashMap<String, String>();

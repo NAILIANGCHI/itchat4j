@@ -17,7 +17,7 @@ import cn.zhouyafeng.itchat4j.utils.tools.DownloadTools;
 
 /**
  * 简单示例程序，收到文本信息自动回复原信息，收到图片、语音、小视频后根据路径自动保存
- * 
+ *
  * @author https://github.com/yaphone
  * @date 创建时间：2017年4月25日 上午12:18:09
  * @version 1.0
@@ -93,7 +93,7 @@ public class SimpleDemo implements IMsgHandlerFace {
 		String nickName = recommendInfo.getNickName();
 		String province = recommendInfo.getProvince();
 		String city = recommendInfo.getCity();
-		String text = "你好，来自" + province + city + "的" + nickName + "， 欢迎添加我为好友！";
+		String text = "你好，来自" + province + city + "的" + nickName + "， 添加我为好友！\n 输入\\menu来使用我";
 		return text;
 	}
 
