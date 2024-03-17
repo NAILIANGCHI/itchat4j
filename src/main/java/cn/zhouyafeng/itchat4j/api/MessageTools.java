@@ -35,7 +35,7 @@ import cn.zhouyafeng.itchat4j.utils.enums.VerifyFriendEnum;
 
 /**
  * 消息处理类
- * 
+ *
  * @author https://github.com/yaphone
  * @date 创建时间：2017年4月23日 下午2:30:37
  * @version 1.0
@@ -48,7 +48,7 @@ public class MessageTools {
 
 	/**
 	 * 根据UserName发送文本消息
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年5月4日 下午11:17:38
 	 * @param msg
@@ -64,7 +64,7 @@ public class MessageTools {
 
 	/**
 	 * 根据ID发送文本消息
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年5月6日 上午11:45:51
 	 * @param text
@@ -75,11 +75,12 @@ public class MessageTools {
 			return;
 		}
 		sendMsg(text, id);
+		LOG.info(text);
 	}
 
 	/**
 	 * 根据NickName发送文本消息
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年5月4日 下午11:17:38
 	 * @param text
@@ -99,7 +100,7 @@ public class MessageTools {
 
 	/**
 	 * 消息发送
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年4月23日 下午2:32:02
 	 * @param msgType
@@ -129,7 +130,7 @@ public class MessageTools {
 
 	/**
 	 * 上传多媒体文件到 微信服务器，目前应该支持3种类型: 1. pic 直接显示，包含图片，表情 2.video 3.doc 显示为文件，包含PDF等
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年5月7日 上午12:41:13
 	 * @param filePath
@@ -197,7 +198,7 @@ public class MessageTools {
 
 	/**
 	 * 根据NickName发送图片消息
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年5月7日 下午10:32:45
 	 * @param nackName
@@ -213,7 +214,7 @@ public class MessageTools {
 
 	/**
 	 * 根据用户id发送图片消息
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年5月7日 下午10:34:24
 	 * @param nickName
@@ -233,7 +234,7 @@ public class MessageTools {
 
 	/**
 	 * 发送图片消息，内部调用
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年5月7日 下午10:38:55
 	 * @return
@@ -269,7 +270,7 @@ public class MessageTools {
 
 	/**
 	 * 根据用户id发送文件
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年5月7日 下午11:57:36
 	 * @param userId
@@ -297,7 +298,7 @@ public class MessageTools {
 
 	/**
 	 * 根据用户昵称发送文件消息
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年5月10日 下午10:59:27
 	 * @param nickName
@@ -314,7 +315,7 @@ public class MessageTools {
 
 	/**
 	 * 内部调用
-	 * 
+	 *
 	 * @author https://github.com/yaphone
 	 * @date 2017年5月10日 上午12:21:28
 	 * @param userId
@@ -339,7 +340,7 @@ public class MessageTools {
 		msgMap.put("ClientMsgId", clientMsgId);
 		/*
 		 * Map<String, Object> paramMap = new HashMap<String, Object>();
-		 * 
+		 *
 		 * @SuppressWarnings("unchecked") Map<String, Map<String, String>>
 		 * baseRequestMap = (Map<String, Map<String, String>>)
 		 * core.getLoginInfo() .get("baseRequest"); paramMap.put("BaseRequest",
@@ -364,7 +365,7 @@ public class MessageTools {
 
 	/**
 	 * 被动添加好友
-	 * 
+	 *
 	 * @date 2017年6月29日 下午10:08:43
 	 * @param msg
 	 * @param accept

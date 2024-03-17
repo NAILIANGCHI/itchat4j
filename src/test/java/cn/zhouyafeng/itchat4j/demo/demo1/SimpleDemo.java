@@ -4,6 +4,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import cn.zhouyafeng.itchat4j.utils.FolderUtils;
 import org.apache.log4j.Logger;
 
 import cn.zhouyafeng.itchat4j.api.MessageTools;
@@ -26,6 +27,7 @@ import cn.zhouyafeng.itchat4j.utils.tools.DownloadTools;
 public class SimpleDemo implements IMsgHandlerFace {
 	Logger LOG = Logger.getLogger(SimpleDemo.class);
 
+	private String folderDir = FolderUtils.folderDirName();
 	@Override
 	public String textMsgHandle(BaseMsg msg) {
 		// String docFilePath = "D:/itchat4j/pic/1.jpg"; // 这里是需要发送的文件的路径
@@ -54,25 +56,28 @@ public class SimpleDemo implements IMsgHandlerFace {
 	@Override
 	public String picMsgHandle(BaseMsg msg) {
 		String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(new Date());// 这里使用收到图片的时间作为文件名
-		String picPath = "D://itchat4j/pic" + File.separator + fileName + ".jpg"; // 调用此方法来保存图片
+		String picPath = folderDir +"/pic" + File.separator + fileName + ".jpg"; // 调用此方法来保存图片
 		DownloadTools.getDownloadFn(msg, MsgTypeEnum.PIC.getType(), picPath); // 保存图片的路径
-		return "图片保存成功";
+//		return "图片保存成功";
+		return null;
 	}
 
 	@Override
 	public String voiceMsgHandle(BaseMsg msg) {
 		String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(new Date());
-		String voicePath = "D://itchat4j/voice" + File.separator + fileName + ".mp3";
+		String voicePath = folderDir + "/voice" + File.separator + fileName + ".mp3";
 		DownloadTools.getDownloadFn(msg, MsgTypeEnum.VOICE.getType(), voicePath);
-		return "声音保存成功";
+//		return "声音保存成功";
+		return null;
 	}
 
 	@Override
 	public String viedoMsgHandle(BaseMsg msg) {
 		String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(new Date());
-		String viedoPath = "D://itchat4j/viedo" + File.separator + fileName + ".mp4";
+		String viedoPath = folderDir + "/video" + File.separator + fileName + ".mp4";
 		DownloadTools.getDownloadFn(msg, MsgTypeEnum.VIEDO.getType(), viedoPath);
-		return "视频保存成功";
+//		return "视频保存成功";
+		return null;
 	}
 
 	@Override
@@ -91,18 +96,18 @@ public class SimpleDemo implements IMsgHandlerFace {
 		MessageTools.addFriend(msg, true); // 同意好友请求，false为不接受好友请求
 		RecommendInfo recommendInfo = msg.getRecommendInfo();
 		String nickName = recommendInfo.getNickName();
-		String province = recommendInfo.getProvince();
-		String city = recommendInfo.getCity();
-		String text = "你好，来自" + province + city + "的" + nickName + "， 添加我为好友！\n 输入\\menu来使用我";
-		return text;
+//		String province = recommendInfo.getProvince();
+//		String city = recommendInfo.getCity();
+		return "你好," + nickName + "\n \n 输入\\menu来使用我";
 	}
 
 	@Override
 	public String mediaMsgHandle(BaseMsg msg) {
 		String fileName = msg.getFileName();
-		String filePath = "D://itchat4j/file" + File.separator + fileName; // 这里是需要保存收到的文件路径，文件可以是任何格式如PDF，WORD，EXCEL等。
+		String filePath = folderDir + "/file" + File.separator + fileName; // 这里是需要保存收到的文件路径，文件可以是任何格式如PDF，WORD，EXCEL等。
 		DownloadTools.getDownloadFn(msg, MsgTypeEnum.MEDIA.getType(), filePath);
-		return "文件" + fileName + "保存成功";
+//		return "文件" + fileName + "保存成功";
+		return null;
 	}
 
 }
